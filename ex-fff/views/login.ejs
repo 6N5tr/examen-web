@@ -1,0 +1,36 @@
+<% include ./comunes/header.ejs %>
+<% const existeMensaje = typeof errores !== "undefined" ? true : false; %>
+
+<div class="container">
+    <div class="row" style="padding-top: 100px;">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 border text-white" id="contenido" style="background-color: rgba(122, 170, 219, 0.5);">
+            <% if(existeMensaje){ %>
+            <div class="animated fadeInUp alert alert-danger" role="alert">
+                ERROR: <%= errores %>
+            </div>
+            <% } %>
+            <h1 class="titulo">Login </h1>
+            <!-- Modal Content -->
+            <form action="/usuario/login" method="post">
+                <div class="imgcontainer">
+                    <img src="/logo.png" alt="Avatar" class="avatar1" style="width: 40%;height: auto">
+                </div>
+                <label for="email"><b>Correo</b></label>
+                <input class="form-control"
+                       id="email" type="text" placeholder="Ingresa tu correo" name="email" required>
+                <label for="password"><b>Contraseña</b></label>
+                <input  class="form-control"
+                        id="password" type="password" placeholder="Ingresa tu contraseña" name="password" required>
+                <button style="margin-top: 10px; margin-bottom: 10px;" type="submit" class="btn btn-danger btn-block">Login</button>
+            </form>
+            <a href="/usuario/registrarse" style="text-decoration: none">
+                <button class="btn btn-success btn-block btn-espaciado"
+                >Registrate</button>
+            </a>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+<% include ./comunes/librerias.ejs %>
+<% include ./comunes/footer.ejs %>

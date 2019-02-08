@@ -1,0 +1,119 @@
+<% const tieneTitulo = typeof titulo !== 'undefined'; %>
+<% const esUsuarioLocal = typeof esUsuario !== 'undefined'; %>
+<% const esAdministradorLocal = typeof esAdministrador !== 'undefined'; %>
+
+
+<!doctype html>
+<html lang="es">
+<head>
+    <title><%= tieneTitulo ? titulo : 'Pokemon' %></title>
+    <% include head.ejs %>
+</head>
+<style>
+    body {
+        background: url(/bg.png) no-repeat center top;
+        background-attachment: fixed;
+        background-size: cover;
+        background-color: #464646;
+    }
+</style>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light  fixed-top" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="/" style="color: #4e555b" ><img src="/logo.png" alt="Avatar" class="avatar" style="width: 5%;height: 10%">
+        Entrenador</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul   class="navbar-nav ml-auto">
+            <% if (esAdministradorLocal){ %>
+            <a class="nav-link" href="/usuario/listar"  role="button"
+               aria-haspopup="true" aria-expanded="false">
+                Usuarios
+            </a>
+            <%}%>
+
+            <li class="nav-item dropdown">
+                <% if (esUsuarioLocal){ %>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/entrenador/registrar">Entrenador</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pokemon/registrar">Pokemon</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/evento/registrar">Liga Pokemon</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/usuario/logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--<a class="nav-link" href="/entrenador/registrar">Entrenador</a>
+                <a class="nav-link" href="/pokemon/registrar">Pokemon</a>
+                <a class="nav-link" href="/evento/registrar">Liga Pokemon</a>
+                <a class="nav-link" href="/usuario/logout">Logout</a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Cuenta
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/pokemon/registrar">Registrar Pokemon</a>
+                        <a class="dropdown-item" href="/entrenador/registrar">Registrar Entrenador</a>
+                        <a class="dropdown-item" href="/evento/registrar">Registrar Liga Pokemon</a>
+                        <a class="dropdown-item" href="/usuario/logout">Logout</a>
+                    </div>-->
+                <%}else {%>
+                <%if (!esAdministradorLocal){  %>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <!--<li class="nav-item active">
+                            <a class="nav-link" href="/usuario/registrarse">Registrate</a>
+                        </li>-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/usuario/login">Login</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Comienza Aqui
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/usuario/registrarse">Registrate</a>
+                    <a class="dropdown-item" href="/usuario/login">Login</a>
+                </div>
+                -->
+                <% }else {%>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/usuario/logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Cuenta
+                </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/usuario/logout">Logout</a>
+            -->
+                <% }%>
+                <%}%>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+<!--
+<div><img src="/oak.png" alt=""></div>
+-->
