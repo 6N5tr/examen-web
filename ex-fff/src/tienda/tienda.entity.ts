@@ -31,10 +31,7 @@ export class TiendaEntity {
     type: 'int',
   })
   RUC: number;
-  @Column({
-    type: 'boolean',
-  })
-  matriz: boolean;
+
 
 
   @ManyToOne(
