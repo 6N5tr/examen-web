@@ -1,10 +1,10 @@
 import {Body, Controller, Get, Param, Post, Query, Res, Session} from "@nestjs/common";
-import {Entrenador, EntrenadorService} from "./entrenador.service";
+import {Entrenador, TiendaService} from "./tienda.service";
 
 @Controller('entrenador')
-export class EntrenadorController {
+export class TiendaController {
     constructor(
-        private readonly _entrenadorService:EntrenadorService,
+        private readonly _entrenadorService:TiendaService,
     )
     {}
 

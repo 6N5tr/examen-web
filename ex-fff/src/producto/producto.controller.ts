@@ -1,10 +1,10 @@
 import {Body, Controller, Get, Param, Post, Query, Res, Session} from "@nestjs/common";
-import {Pokemon, PokemonService} from "./pokemon.service";
+import {Producto, ProductoService} from "./producto.service";
 
-@Controller('pokemon')
-export class PokemonController {
+@Controller('producto')
+export class ProductoController {
     constructor(
-        private readonly _pokemonService:PokemonService,
+        private readonly _pokemonService:ProductoService,
     )
     {}
 
@@ -46,7 +46,7 @@ export class PokemonController {
     async registrarPokemonPost(
         @Res() response,
         @Session() session,
-        @Body() pokemon: Pokemon,
+        @Body() pokemon: Producto,
     ){
 
         if(!session.usuario){
