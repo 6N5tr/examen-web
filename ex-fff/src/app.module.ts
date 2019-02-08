@@ -17,8 +17,10 @@ import {EventoModule} from "./evento/evento.module";
             {
                 type: 'mysql',
                 host: '192.168.99.100',
+
                 port: 32771,
                 database: 'tienda',
+
                 username: 'root',
                 password: 'root',
                 synchronize: true,

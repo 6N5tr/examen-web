@@ -11,38 +11,38 @@ export class TiendaService {
     // Inyectar Dependencias
     constructor(
         @InjectRepository(TiendaEntity)
-        private readonly _entrenadorRepository: Repository<TiendaEntity>,
+        private readonly _tiendaRepository: Repository<TiendaEntity>,
     ) {
     }
 
 
-    async crear(nuevoEntrenador: Entrenador): Promise<TiendaEntity> {
+    async crear(nuevoTienda: Tienda): Promise<TiendaEntity> {
 
         // Instanciar una entidad -> .create()
-        const entrenadorEntity = this._entrenadorRepository
-            .create(nuevoEntrenador);
+        const tiendaEntity = this._tiendaRepository
+            .create(nuevoTienda);
 
         // Guardar una entidad en la BDD -> .save()
-        const entrenadorCreado = await this._entrenadorRepository
-            .save(entrenadorEntity);
+        const tiendaCreado = await this._tiendaRepository
+            .save(tiendaEntity);
 
-        return entrenadorCreado;
+        return tiendaCreado;
     }
 
     buscar(parametros?:FindManyOptions):Promise<TiendaEntity[]>{
-        return this._entrenadorRepository.find(parametros)
+        return this._tiendaRepository.find(parametros)
     }
 
 
 }
 
-export interface Entrenador {
+export interface Tienda {
     id?:number;
-    nombreEntrenador:string;
-    apellidoEntrenador
-    fecha_nacimiento:string;
-    numeroMedallas:number;
-    campeon:boolean;
+    nombre:string;
+    direccion:string
+    fechaApertura:string;
+    RUC:number;
+    matriz:boolean;
     usuario?:UsuarioEntity,
     pokemones?:ProductoEntity[]
 }
