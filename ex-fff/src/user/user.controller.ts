@@ -197,10 +197,10 @@ export class UsuarioController {
                     nombre: usuario.nombre,
                     correo: usuario.correo,
                     esUsuario: usuario.roles.some((rol) => {
-                        return rol.nombre == 'usuario';
+                        return rol.nombre ==='usuario';
                     }),
                     esAdministrador: usuario.roles.some((rol) => {
-                        return rol.nombre == 'administrador';
+                        return rol.nombre ==='administrador';
                     })
                 };
                 response.redirect('/')
