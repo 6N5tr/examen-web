@@ -1,0 +1,92 @@
+
+<% include ./comunes/header.ejs %>
+<div class="container">
+    <div class="row" style="padding-top: 100px">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-6 border text-white" id="contenido" style="background-color: rgba(56,114,173,0.7);">
+            <h1 class="titulo">Registro de Producto: </h1>
+            <!-- Modal Content -->
+            <form action="/producto/registrar" method="post">
+
+                <label for="nombreProducto"><b>Nombre del Producto</b></label>
+                <input class="form-control"
+                       id="nombre" type="text" placeholder="Ingresa el nombre del Prodcuto" name="nombre"
+                       required>
+
+                <label for="numeroProducto"><b>Numero de Prodcutos</b></label>
+                <input class="form-control"
+                       id="numeroProducto" type="number" placeholder="Ingresa el tipo del Producto"
+                       name="numeroProducto" required>
+
+
+                <label for="descripción"><b>Descripción</b></label>
+                <input class="form-control"
+                       id="descripcion" type="text" placeholder="Ingresa la Descripcion"
+                       name="descripcion" required>
+
+                <label for="precio"><b>Precio </b></label>
+                <input class="form-control"
+                       id="precio" type="text" placeholder="Ingresa el precio" name="precio" required>
+
+                <label for="fecha_captura"><b>Fecha Lanzamiento Producto</b></label>
+                <input class="form-control"
+                       id="fechaLanzamientoProducto"
+                       type="date" max="2019-02-08"
+                       placeholder="Ingresa la fecha de Lanzamiento" name="fechaLanzamientoProducto" required>
+
+                <label for="nivel"><b>Años Garantia</b></label>
+                <input class="form-control"
+                       id="aniosGarantia" type="number" placeholder="Ingresa los años de garantia"
+                       name="aniosGarantia" required>
+
+                <div class="form-group">
+                    <label for="tienda">Tienda</label>
+                    <select class="form-control"
+                            name="tienda"
+                            id="tienda" required>
+                    </select>
+                </div>
+
+                <button style="margin-top: 20px; margin-bottom: 20px;" type="submit" class="btn btn-success btn-block">Registrar</button>
+
+            </form>
+            <a href="/" style="text-decoration: none">
+                <button class="btn btn-info btn-block btn-espaciado"
+                >Regresar</button>
+            </a>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <% include ./comunes/librerias.ejs %>
+    <script>
+        let etiquerasSelectTiendas = document.getElementById('tienda')
+        const url = 'http://localhost:3000/tienda/listar';
+        $.get(
+            url, // URL
+            (datos) => {  // Callback
+                console.log(datos)
+                const arregloTiendas = datos;
+                matarHijos();
+                llenarTiendas(arregloTiendas);
+            }
+        )
+        function llenarTiendas(arregloTiendas) {
+            arregloTiendas
+                .forEach(
+                    (tienda) => {
+                        const nuevaOption = document.createElement('option');
+                        nuevaOption.value = tienda.id;
+                        nuevaOption.innerText = tienda.nombre;
+                        nuevaOption.localName = 'tienda_nombre'
+                        etiquerasSelectTiendas.appendChild(nuevaOption);
+                    }
+                )
+        }
+        function matarHijos() { //AKA eliminarLasOpciones
+            while (etiquerasSelectTiendas.firstChild) {
+                etiquerasSelectTiendas.removeChild(etiquerasSelectTiendas.firstChild);
+            }
+        }
+    </script>
+    <% include ./comunes/footer.ejs %>
