@@ -4,12 +4,12 @@ import {Producto, ProductoService} from "./producto.service";
 @Controller('producto')
 export class ProductoController {
     constructor(
-        private readonly _pokemonService:ProductoService,
+        private readonly _productoService:ProductoService,
     )
     {}
 
     @Get('registrar')
-    registrarPokemon(
+    registrarProducto(
         @Res() response,
         @Session() session
     )
@@ -33,20 +33,20 @@ export class ProductoController {
         }
 
         response.render(
-            'pokemon_registro',
+            'producto_registro',
             {
                 esUsuario:usuario,
                 esAdministrador:admin,
-                titulo:"Registrar Pokemon"
+                titulo:"Registrar producto"
             }
         )
     }
 
     @Post('registrar')
-    async registrarPokemonPost(
+    async registrarProductoPost(
         @Res() response,
         @Session() session,
-        @Body() pokemon: Producto,
+        @Body() producto: Producto,
     ){
 
         if(!session.usuario){
@@ -55,15 +55,15 @@ export class ProductoController {
         if(session.usuario.esAdministrador && !session.usuario.esUsuario){
             response.redirect("/")
         }
-        console.log(pokemon);
-        const pokemon_nueva = await this._pokemonService.crear(pokemon);
+        console.log(producto);
+        const producto_nuevo = await this._productoService.crear(producto);
         response.redirect("/")
     }
 
     @Get('listar')
     async getRoles(
     ) {
-        return await this._pokemonService.buscar();
+        return await this._productoService.buscar();
     }
 
 
