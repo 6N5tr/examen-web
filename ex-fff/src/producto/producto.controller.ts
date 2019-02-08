@@ -56,6 +56,11 @@ export class ProductoController {
             response.redirect("/")
         }
         console.log(producto);
+        console.log("-----------------------")
+        console.log(producto.tiendaId);
+        console.log("-----------------------")
+        // producto.usuario = session.usuario.id;
+
         const producto_nuevo = await this._productoService.crear(producto);
         response.redirect("/")
     }
