@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf9ecb51-8e5c-4277-9ba8-821c4822c302" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ex-fff/sessions/zls0hPSnbzXU4SaYn6Q2PADpjtCkc5Yi.json" beforeDir="false" afterPath="$PROJECT_DIR$/ex-fff/sessions/zls0hPSnbzXU4SaYn6Q2PADpjtCkc5Yi.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex-fff/views/evento_registro.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/ex-fff/views/evento_registro.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex-fff/views/pokemon_registro.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/ex-fff/views/producto_registro.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex-fff/views/producto_registro.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/ex-fff/views/producto_registro.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -46,14 +44,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="2" />
-          <entry key="ejs" value="912" />
+          <entry key="ejs" value="930" />
           <entry key="ts" value="253" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="2" />
-          <entry key="EJS" value="912" />
+          <entry key="EJS" value="930" />
           <entry key="TypeScript" value="253" />
         </counts>
       </usages-collector>
@@ -124,9 +122,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ex-fff/views/producto_registro.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="71" column="13" lean-forward="true" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+            <state relative-caret-position="220">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
               <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -167,7 +166,6 @@
       <find>img</find>
       <find>e3f2fd</find>
       <find>entrenado</find>
-      <find>sty</find>
       <find>styl</find>
       <find>style</find>
       <find>poque</find>
@@ -178,6 +176,7 @@
       <find>en</find>
       <find>pokemon</find>
       <find>poke</find>
+      <find>sty</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -361,12 +360,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1549654284782</updated>
-      <workItem from="1549654286676" duration="6487000" />
+      <workItem from="1549654286676" duration="6709000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6487000" />
+    <option name="totallyTimeSpent" value="6709000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="314" y="0" width="1053" height="728" extended-state="0" />
@@ -681,9 +680,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ex-fff/views/producto_registro.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="71" column="13" lean-forward="true" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+        <state relative-caret-position="220">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
           <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
