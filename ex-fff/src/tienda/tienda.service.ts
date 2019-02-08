@@ -42,6 +42,7 @@ export interface Tienda {
     direccion:string
     fechaApertura:string;
     RUC:number;
+    matriz:boolean;
     usuario?:UsuarioEntity,
     pokemones?:ProductoEntity[]
 }
