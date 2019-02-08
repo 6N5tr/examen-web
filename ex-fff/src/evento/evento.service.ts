@@ -2,7 +2,7 @@ import {Injectable} from "@nestjs/common";
 import {FindManyOptions, Repository} from "typeorm";
 import {EventoEntity} from "./evento.entity";
 import {InjectRepository} from '@nestjs/typeorm';
-import {PokemonEntity} from "../pokemon/pokemon.entity";
+import {ProductoEntity} from "../producto/producto.entity";
 import {UsuarioEntity} from "../user/user.entity";
 import {Usuario} from "../user/user.service";
 
@@ -46,5 +46,5 @@ export interface Evento {
     fecha:string;
     latitud:number;
     longitud:number;
-    pokemones:PokemonEntity[];
+    pokemones:ProductoEntity[];
 }

@@ -1,22 +1,22 @@
 import {Injectable} from "@nestjs/common";
-import {EntrenadorEntity} from "./entrenador.entity";
+import {TiendaEntity} from "./tienda.entity";
 import {FindManyOptions, Repository} from "typeorm";
 
 import {InjectRepository} from '@nestjs/typeorm';
 import {UsuarioEntity} from "../user/user.entity";
-import {PokemonEntity} from "../pokemon/pokemon.entity";
+import {ProductoEntity} from "../producto/producto.entity";
 
 @Injectable()
-export class EntrenadorService {
+export class TiendaService {
     // Inyectar Dependencias
     constructor(
-        @InjectRepository(EntrenadorEntity)
-        private readonly _entrenadorRepository: Repository<EntrenadorEntity>,
+        @InjectRepository(TiendaEntity)
+        private readonly _entrenadorRepository: Repository<TiendaEntity>,
     ) {
     }
 
 
-    async crear(nuevoEntrenador: Entrenador): Promise<EntrenadorEntity> {
+    async crear(nuevoEntrenador: Entrenador): Promise<TiendaEntity> {
 
         // Instanciar una entidad -> .create()
         const entrenadorEntity = this._entrenadorRepository
@@ -29,7 +29,7 @@ export class EntrenadorService {
         return entrenadorCreado;
     }
 
-    buscar(parametros?:FindManyOptions):Promise<EntrenadorEntity[]>{
+    buscar(parametros?:FindManyOptions):Promise<TiendaEntity[]>{
         return this._entrenadorRepository.find(parametros)
     }
 
@@ -44,5 +44,5 @@ export interface Entrenador {
     numeroMedallas:number;
     campeon:boolean;
     usuario?:UsuarioEntity,
-    pokemones?:PokemonEntity[]
+    pokemones?:ProductoEntity[]
 }
