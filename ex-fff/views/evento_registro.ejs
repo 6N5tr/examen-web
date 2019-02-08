@@ -3,10 +3,9 @@
 <div class="container">
     <div class="row" style="padding-top: 100px;">
         <div class="col-md-4">
-            <img src="/liga.png" style=" width: 90%;margin-top: 10%;position: absolute " class="animated zoomInDown" alt="">
         </div>
         <div class="col-md-4 border text-white" id="contenido" style="background-color: rgba(56,114,173,0.7);">
-            <h1 class="titulo">Liga Pokemon</h1>
+            <h1 class="titulo">Venta</h1>
             <!-- Modal Content -->
             <form action="/evento/registrar" method="post">
 
@@ -27,8 +26,8 @@
                 <input  class="form-control"
                         id="longitud" type="text" placeholder="Ingresa la longitud" name="longitud" required>
 
-                <label for="pokemones"><b>Pokemones</b></label>
-                <div class="form-check" id="contenido_pokemones">
+                <label for="productos"><b>Productos</b></label>
+                <div class="form-check" id="contenido_productos">
 
                 </div>
 
@@ -46,25 +45,25 @@
 </div>
 <% include ./comunes/librerias.ejs %>
 <script>
-    let contenido = $("#contenido_pokemones");
+    let contenido = $("#contenido_productos");
     const url = 'http://localhost:3000/producto/listar';
     $.get(
         url, // URL
         (datos) => {  // Callback
             console.log(datos)
-            const arregloPokemones = datos;
+            const arregloProductos = datos;
             contenido.empty()
-            llenarPokemones(arregloPokemones);
+            llenarProductos(arregloProductos);
         }
     )
-    function llenarPokemones(arregloPokemones) {
-        arregloPokemones
+    function llenarProductos(arregloProductos) {
+        arregloProductos
             .forEach(
-                (pokemon) => {
+                (productos) => {
                     let html =`
-                <input class="form-check-input" name="pokemones" type="checkbox" value=${pokemon.id} id="${pokemon.id}">
-                    <label class="form-check-label" for="${pokemon.id}">
-                        ${pokemon.nombrePokemon}
+                <input class="form-check-input" name="productos" type="checkbox" value=${producto.id} id="${producto.id}">
+                    <label class="form-check-label" for="${producto.id}">
+                        ${producto.nombreProducto}
                     </label>
                 <br>`
                     contenido.append(html);

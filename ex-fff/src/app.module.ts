@@ -26,7 +26,9 @@ import {EventoModule} from "./evento/evento.module";
                 username: 'root',
                 password: 'root',
                 synchronize: true,
-                dropSchema:true,
+
+                dropSchema: false,
+
                 entities:[
                     UsuarioEntity,
                     ProductoEntity,
