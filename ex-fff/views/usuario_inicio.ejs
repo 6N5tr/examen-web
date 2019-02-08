@@ -3,10 +3,10 @@
 <div class="container">
     <div class="row" style="padding-top: 100px;">
         <div class="col-md-2"></div>
-        <div class="col-md-8 text-white" id="contenido" style="background-color: rgba(122,170,219,0.9)">
+        <div class="col-md-8" id="contenido" >
             <h1>Usuarios: </h1>
             <form action="/usuario/listar" method="get">
-                <div class="row text-white"  style="background-color: rgba(122,170,219,0.9);">
+                <div class="row"  >
                     <div class="col-sm-9 text-dark">
                         <div class="form-group">
                             <label for="busqueda">Buscar</label>
@@ -34,7 +34,7 @@
 
     <div class="row" >
         <div class="col-md-2"></div>
-        <div class="col-md 8 text-white" style="background-color: rgba(56,114,173,0.8);" >
+        <div class="col-md 8 "  >
 
             <table class="table table-hover animated fadeInUp">
                 <caption>Lista de usuarios</caption>
@@ -69,10 +69,8 @@
                                     </div>
                                     <div class="modal-body">
                                         <p><strong>Desea eliminar el Usuario?</strong></p>
-                                        <img style="width: 100%; height: auto; object-fit: contain;"
-                                             src="https://www.w3schools.com/howto/img_avatar2.png">
                                     </div>
-                                    <div class="modal-footer" style="background-color: black;">
+                                    <div class="modal-footer">
                                         <form action="/usuario/borrar/<%= usuario.id %>"
                                               method="post">
                                             <button type="submit"
@@ -104,7 +102,7 @@
                                 <div class="modal-body">
                                     <p><strong>Desea eliminar el Usuario?</strong></p>
                                 </div>
-                                <div class="modal-footer" style="background-color: black;">
+                                <div class="modal-footer" >
                                     <form action="/usuario/borrar/<%= usuario.id %>"
                                           method="post">
                                         <!--<button type="button">Yo no</button>-->
