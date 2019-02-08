@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row" style="padding-top: 100px;">
         <div class="col-md-4"></div>
-        <div class="col-md-4 border text-white" id="contenido" style="background-color: rgba(122, 170, 219, 0.5);">
+        <div class="col-md-4 border" id="contenido" >
             <% if(existeMensaje){ %>
             <div class="animated fadeInUp alert alert-danger" role="alert">
                 ERROR: <%= errores %>
@@ -12,10 +12,7 @@
             <% } %>
             <h1 class="titulo">Login </h1>
             <!-- Modal Content -->
-            <form action="/usuario/login" method="post">
-                <div class="imgcontainer">
-
-                </div>
+            <form action="/usuario/login" method="post" >
                 <label for="email"><b>Correo</b></label>
                 <input class="form-control"
                        id="email" type="text" placeholder="Ingresa tu correo" name="email" required>
@@ -23,11 +20,13 @@
                 <input  class="form-control"
                         id="password" type="password" placeholder="Ingresa tu contraseña" name="password" required>
                 <button style="margin-top: 10px; margin-bottom: 10px;" type="submit" class="btn btn-danger btn-block">Login</button>
+                <br>
             </form>
-            <a href="/usuario/registrarse" style="text-decoration: none">
+            <a href="/usuario/registrarse">
                 <button class="btn btn-success btn-block btn-espaciado"
                 >Registrate</button>
             </a>
+                <br>
         </div>
         <div class="col-md-4"></div>
     </div>

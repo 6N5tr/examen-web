@@ -19,7 +19,7 @@ export class UsuarioEntity {
   @OneToMany(
     type => TiendaEntity,
     // @ts-ignore
-    entrenador => entrenador.usuario,
+    tienda => tienda.usuario,
   )
   tiendas: TiendaEntity[];
 
