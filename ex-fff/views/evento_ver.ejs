@@ -4,13 +4,13 @@
         <div class="col-md-1"></div>
         <div class="col-md-10 border"  id="contenido" >
 
-            <h1 class="text-white "><%= evento.nombre %></h1>
+            <h1 class=""><%= evento.nombre %></h1>
             <!-- Modal Content -->
             <div class="row">
-                <div class="col-md-4 text-white">
+                <div class="col-md-4 ">
                     <h2 class="titulo">Detalles</h2>
                     <ul>
-                        <li  class="list-group-item list-group-item-action  text-white" ><%= evento.nombre %></li>
+                        <li  class="list-group-item list-group-item-action " ><%= evento.nombre %></li>
                         <li  class="list-group-item list-group-item-action" ><strong>Fecha: </strong><%= evento.fecha %></li>
                         <li  class="list-group-item list-group-item-action"><strong>Latitud: </strong><%= evento.latitud %></li>
                         <li  class="list-group-item list-group-item-action"><strong>Longitud: </strong><%= evento.longitud %></li>
@@ -20,16 +20,16 @@
 
                 </div>
 
-                <div class="col-md-4 list-group text-white">
+                <div class="col-md-4 list-group">
                     <h2 class="titulo">Productos</h2>
 
-                    <% evento.pokemones.forEach((pokemon)=>{ %>
+                    <% evento.productos.forEach((producto)=>{ %>
                         <ul>
-                            <li  class="list-group-item list-group-item-action active bg-dark "><strong><%= pokemon.nombrePokemon %> <img style="width: 22%; position: relative; top: 1%; right: -45% " src="/<%= pokemon.nombrePokemon %>.jpg" alt=""></strong></li>
-                            <!--<li><img src="/<%= pokemon.nombrePokemon %>.jpg" alt=""></li>-->
-                            <li  class="list-group-item list-group-item-action "><strong>Poder Especial: </strong><%= pokemon.poderEspecial1 %></li>
-                            <li  class="list-group-item list-group-item-action "><strong>Poder Especial: </strong><%= pokemon.poderEspecial2 %></li>
-                            <li  class="list-group-item list-group-item-action "><strong>Tipo: </strong><%= pokemon.tipoPokemon %></li>
+                            <li  class="list-group-item list-group-item-action active bg-dark "><strong><%= producto.nombreProducto %> <img style="width: 22%; position: relative; top: 1%; right: -45% " src="/<%= producto.nombreProducto %>.jpg" alt=""></strong></li>
+                            <!--<li><img src="/<%= producto.nombreProducto %>.jpg" alt=""></li>-->
+                            <li  class="list-group-item list-group-item-action "><strong>Nombre: </strong><%= producto.nombre %></li>
+                            <li  class="list-group-item list-group-item-action "><strong>Descripcion: </strong><%= producto.descripcion %></li>
+                            <li  class="list-group-item list-group-item-action "><strong>Precio: </strong><%= producto.precio %></li>
                         </ul>
                         <br>
                     <%})%>
@@ -37,7 +37,7 @@
 
                 </div>
 
-                <div class="col-md-4 text-white">
+                <div class="col-md-4 ">
                     <h2 class="titulo">Localizacion del Evento</h2>
                     <div >
                         <iframe width="100%" class="animated zoomInLeft" height="400"
