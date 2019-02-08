@@ -35,7 +35,7 @@ export class EventoService {
     }
 
     buscarPorId(id: number): Promise<EventoEntity> {
-        return this._eventoRepository.findOne(id, {relations: ["pokemones"]} );
+        return this._eventoRepository.findOne(id, {relations: ["productos"]} );
     }
 
 }
@@ -46,5 +46,5 @@ export interface Evento {
     fecha:string;
     latitud:number;
     longitud:number;
-    pokemones:ProductoEntity[];
+    productos:ProductoEntity[];
 }
