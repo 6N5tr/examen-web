@@ -27,10 +27,14 @@
                         id="longitud" type="text" placeholder="Ingresa la longitud" name="longitud" required>
 
                 <label for="productos"><b>Productos</b></label>
-                <div class="form-check" id="contenido_productos">
 
-                </div>
+                <% productos.forEach((producto)=>{ %>
 
+                <select>
+                    <option value="<%= producto.id %>"><%= producto.nombre %>.</option>
+
+                </select>
+                <%})%>
                 <button style="margin-top: 20px; margin-bottom: 20px;" type="submit" class="btn btn-success btn-block">Registrar</button>
 
             </form>
@@ -66,6 +70,7 @@
                         ${producto.nombreProducto}
                     </label>
                 <br>`
+                    console.log(arregloProductos)
                     contenido.append(html);
                 }
             )
