@@ -4,7 +4,7 @@
     <div class="row" style="padding-top: 100px;">
         <div class="col-md-4">
         </div>
-        <div class="col-md-4 border text-white" id="contenido" style="background-color: rgba(56,114,173,0.7);">
+        <div class="col-md-4 border " id="contenido" ">
             <h1 class="titulo">Venta</h1>
             <!-- Modal Content -->
             <form action="/evento/registrar" method="post">
@@ -27,10 +27,14 @@
                         id="longitud" type="text" placeholder="Ingresa la longitud" name="longitud" required>
 
                 <label for="productos"><b>Productos</b></label>
-                <div class="form-check" id="contenido_productos">
 
-                </div>
+                <% productos.forEach((producto)=>{ %>
 
+                <select>
+                    <option value="<%= producto.id %>"><%= producto.nombre %>.</option>
+
+                </select>
+                <%})%>
                 <button style="margin-top: 20px; margin-bottom: 20px;" type="submit" class="btn btn-success btn-block">Registrar</button>
 
             </form>
@@ -66,6 +70,7 @@
                         ${producto.nombreProducto}
                     </label>
                 <br>`
+                    console.log(arregloProductos)
                     contenido.append(html);
                 }
             )

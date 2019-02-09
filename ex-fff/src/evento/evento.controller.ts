@@ -14,10 +14,13 @@ export class EventoController {
     {}
 
     @Get('registrar')
-    getEventos(
+    async getEventos(
         @Res() response,
         @Session() session,
     ){
+        let productos= await this._productoService.buscar()
+
+        console.log(productos)
         let usuario = undefined
         let admin = undefined
         if(!session.usuario){
@@ -36,6 +39,7 @@ export class EventoController {
         response.render(
             'evento_registro',
             {
+                productos:productos,
                 esUsuario:usuario,
                 esAdministrador:admin,
                 titulo:"Registrar Evento"
